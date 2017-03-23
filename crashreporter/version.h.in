@@ -1,0 +1,50 @@
+#pragma once
+namespace wiSCADA {
+namespace Constants {
+
+#define STRINGIFY_INTERNAL(x) #x
+#define STRINGIFY(x) STRINGIFY_INTERNAL(x)
+
+#define IDE_VERSION @CRASHREPORTER_VERSION@
+#define IDE_VERSION_STR STRINGIFY(IDE_VERSION)
+#define IDE_VERSION_MAJOR @CRASHREPORTER_VERSION_MAJOR@
+#define IDE_VERSION_MINOR @CRASHREPORTER_VERSION_MINOR@
+#define IDE_VERSION_RELEASE @CRASHREPORTER_VERSION_PATCH@
+
+const char * const IDE_VERSION_LONG      = IDE_VERSION_STR;
+const char * const IDE_AUTHOR            = "wiSCADA Labs";
+const char * const IDE_YEAR              = "2017";
+
+#ifdef IDE_VERSION_DESCRIPTION
+const char * const IDE_VERSION_DESCRIPTION_STR = STRINGIFY(IDE_VERSION_DESCRIPTION);
+#else
+const char * const IDE_VERSION_DESCRIPTION_STR = "";
+#endif
+
+#ifdef IDE_REVISION
+const char * const IDE_REVISION_STR      = STRINGIFY(IDE_REVISION);
+#else
+const char * const IDE_REVISION_STR      = "";
+#endif
+
+// changes the path where the settings are saved to
+#ifdef IDE_SETTINGSVARIANT
+const char * const IDE_SETTINGSVARIANT_STR      = STRINGIFY(IDE_SETTINGSVARIANT);
+#else
+const char * const IDE_SETTINGSVARIANT_STR      = "wiSCADA";
+#endif
+
+#ifdef IDE_COPY_SETTINGS_FROM_VARIANT
+const char * const IDE_COPY_SETTINGS_FROM_VARIANT_STR = STRINGIFY(IDE_COPY_SETTINGS_FROM_VARIANT);
+#else
+const char * const IDE_COPY_SETTINGS_FROM_VARIANT_STR = "wiSCADA";
+#endif
+
+
+#undef IDE_VERSION
+#undef IDE_VERSION_STR
+#undef STRINGIFY
+#undef STRINGIFY_INTERNAL
+
+} // Constants
+} // wiSCADA

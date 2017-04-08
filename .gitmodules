@@ -1,0 +1,3 @@
+[submodule "cmake"]
+	path = cmake
+	url = https://git.oschina.net/wiscada/cmaketemplate.git
